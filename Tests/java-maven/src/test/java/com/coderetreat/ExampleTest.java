@@ -5,7 +5,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import static org.assertj.core.assertions.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ExampleTest {
@@ -16,7 +15,7 @@ class ExampleTest {
         Example example = new Example();
         String result = example.greet("CodeRetreat");
         
-        assertThat(result).isEqualTo("Hello, CodeRetreat!");
+        assertEquals("Hello, CodeRetreat!", result);
     }
 
     @Test
@@ -25,7 +24,7 @@ class ExampleTest {
         Example example = new Example();
         String result = example.greet(null);
         
-        assertThat(result).isEqualTo("Hello, World!");
+        assertEquals("Hello, World!", result);
     }
 
     @Test
@@ -34,7 +33,7 @@ class ExampleTest {
         Example example = new Example();
         String result = example.greet("");
         
-        assertThat(result).isEqualTo("Hello, World!");
+        assertEquals("Hello, World!", result);
     }
 
     @ParameterizedTest
@@ -49,6 +48,6 @@ class ExampleTest {
         Example example = new Example();
         int result = example.add(a, b);
         
-        assertThat(result).isEqualTo(expected);
+        assertEquals(expected, result);
     }
 }
